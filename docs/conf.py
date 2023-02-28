@@ -38,6 +38,9 @@ def setup(app):
 
 
 exclude_patterns = [
+    "**/README*",
+    "**/*.bak",
+    "cluster-setup-guide/deploy-cluster/sysadmin-deploy-on-prem/*.rst",
     "_build",
     "Thumbs.db",
     ".DS_Store",
@@ -89,6 +92,7 @@ html_use_index = True
 html_domain_indices = True
 
 extensions = [
+    "myst_parser",
     "sphinx_ext_downloads",
     "sphinx.ext.autodoc",
     "sphinx.ext.extlinks",
@@ -128,12 +132,6 @@ sitemap_url_scheme = "latest/{link}"
 
 redirects = {
     "api-pytorch": "training/apis-howto/api-pytorch-ug.html",
-    "apis-howto/api-core/checkpoints": "../../api-core-ug.html",
-    "apis-howto/api-core/hpsearch": "../../api-core-ug.html",
-    "apis-howto/api-core/overview": "../../api-core-ug.html",
-    "apis-howto/api-core/metrics": "../../api-core-ug.html",
-    "apis-howto/api-core/getting-started": "../../api-core-ug.html",
-    "apis-howto/api-core/distributed": "../../api-core-ug.html",
     "concepts/elastic-infrastructure": "../introduction.html",
     "concepts/index": "../architecture/index.html",
     "concepts/resource-pool": "../introduction.html",
@@ -308,12 +306,12 @@ redirects = {
     "topic-guides/user-interfaces": "../interfaces/commands-and-shells.html",
     "topic-guides/users": "../cluster-setup-guide/users.html",
     "topic-guides/yaml": "../introduction.html",
-    "training-apis/api-core/checkpoints": "../../training/apis-howto/api-core-ug.html",
-    "training-apis/api-core/distributed": "../../training/apis-howto/api-core-ug.html",
-    "training-apis/api-core/getting-started": "../../training/apis-howto/api-core-ug.html",
-    "training-apis/api-core/hpsearch": "../../training/apis-howto/api-core-ug.html",
-    "training-apis/api-core/index": "../../training/apis-howto/api-core-ug.html",
-    "training-apis/api-core/metrics": "../../training/apis-howto/api-core-ug.html",
+    "training-apis/api-core/checkpoints": "../../training/apis-howto/api-core/checkpoints.html",
+    "training-apis/api-core/distributed": "../../training/apis-howto/api-core/distributed.html",
+    "training-apis/api-core/getting-started": "../../training/apis-howto/api-core/getting-started.html",
+    "training-apis/api-core/hpsearch": "../../training/apis-howto/api-core/hpsearch.html",
+    "training-apis/api-core/index": "../../training/apis-howto/api-core/overview.html",
+    "training-apis/api-core/metrics": "../../training/apis-howto/api-core/metrics.html",
     "training-apis/api-core/reference": "../../reference/reference-training/training/api-core-reference.html",
     "training-apis/api-determined": "../index.html",
     "training-apis/api-estimator-reference": "../reference/reference-training/training/api-estimator-reference.html",
