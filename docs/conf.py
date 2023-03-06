@@ -38,6 +38,8 @@ def setup(app):
 
 
 exclude_patterns = [
+    "**/README.*",
+    "**/*.bak",
     "_build",
     "Thumbs.db",
     ".DS_Store",
@@ -89,6 +91,7 @@ html_use_index = True
 html_domain_indices = True
 
 extensions = [
+    "myst_parser",
     "sphinx_ext_downloads",
     "sphinx.ext.autodoc",
     "sphinx.ext.extlinks",
@@ -98,6 +101,11 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_sitemap",
     "sphinx_reredirects",
+]
+
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
 ]
 
 # Our custom sphinx extension uses this value to decide where to look for

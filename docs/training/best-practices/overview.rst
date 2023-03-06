@@ -38,7 +38,7 @@ WebUI.
 Do:
 
 -  Move any hardcoded scalar values to the :ref:`hyperparameters
-   <experiment-configuration_hyperparameters>` or :ref:`data <experiment-config-data>` fields in the
+   <experiment-configuration-hyperparameters>` or :ref:`data <experiment-config-data>` fields in the
    experiment configuration. Use :func:`context.get_hparam() <determined.TrialContext.get_hparam>`
    or :func:`context.get_data_config() <determined.TrialContext.get_data_config>` to reference them
    in code.
