@@ -1,6 +1,7 @@
 import datetime
 import enum
 from typing import Any, Dict, Iterable, List, Optional, Union
+import warnings
 
 from determined.common import api, util
 from determined.common.api import bindings, logs
@@ -485,3 +486,25 @@ def _stream_validation_metrics(
     for i in bindings.get_GetValidationMetrics(session, trialIds=trial_ids):
         for m in i.metrics:
             yield metrics.ValidationMetrics._from_bindings(m)
+
+
+class TrialReference(Trial):
+    """A legacy class representing an Trial object.
+
+    This class was renamed to :class:`~determined.experimental.Trial` and will be removed
+    in a future release.
+    """
+
+    def __init__(
+        self,
+        trial_id: int,
+        session: api.Session,
+    ):
+        warnings.warn(
+            "'TrialReference' was renamed to 'Trial' and will be removed in a future "
+            "release. Please consider replacing any code references to 'TrialReference' "
+            "with 'Trial'.",
+            FutureWarning,
+            stacklevel=2,
+        )
+        Trial.__init__(self, trial_id=trial_id, session=session)
